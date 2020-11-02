@@ -2,8 +2,9 @@
 @import "./resets";
 @import "./variables";
 @import "./functions";
+@import "./mixins";
 
-// Usage
+// Styling
 body {
   background: $primary-color;
   color: $text-color;
@@ -12,6 +13,7 @@ body {
 // & = parent
 // Nesting
 .main {
+  @include flexCenter(column);
   width: 80%;
   margin: 0 auto;
 
@@ -22,4 +24,8 @@ body {
       color: pink;
     }
   }
+}
+
+.theme {
+  @include theme(false);
 }

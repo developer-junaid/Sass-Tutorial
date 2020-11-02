@@ -1,0 +1,16 @@
+@import "./variables";
+
+// Mixins
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light: true) {
+  @if $light {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
