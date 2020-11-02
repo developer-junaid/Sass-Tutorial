@@ -1,0 +1,25 @@
+// Importing snippets
+@import "./resets";
+@import "./variables";
+@import "./functions";
+
+// Usage
+body {
+  background: $primary-color;
+  color: $text-color;
+}
+
+// & = parent
+// Nesting
+.main {
+  width: 80%;
+  margin: 0 auto;
+
+  #{&}__paragraph {
+    font-weight: weight(bold);
+    // Hover
+    &:hover {
+      color: pink;
+    }
+  }
+}
