@@ -13,16 +13,26 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 80%;
+  flex-direction: row;
+  width: 60%;
   margin: 0 auto;
 }
 
-.main .main__paragraph {
+.main .main__paragraph1, .main .main__paragraph2 {
   font-weight: 700;
 }
 
-.main .main__paragraph:hover {
+.main .main__paragraph1:hover, .main .main__paragraph2:hover {
   color: pink;
+}
+
+.main .main__paragraph2:hover {
+  color: #ff652f;
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
 }
 /*# sourceMappingURL=main.css.map */

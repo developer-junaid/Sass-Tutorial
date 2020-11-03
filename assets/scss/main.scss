@@ -1,28 +1,41 @@
 // Importing snippets
-@import "./resets";
-@import "./variables";
-@import "./functions";
-@import "./mixins";
+// look for each snippet in scss folder, and learn concepts of (resets, variables, functions and mixins)
+@import "./resets";    // 0
+@import "./variables"; // 1
+@import "./functions"; // 2
+@import "./mixins";    // 3
 
-// Styling
+// Styling using Variables
 body {
   background: $primary-color;
   color: $text-color;
 }
 
-// & = parent
+// & means parent class
 // Nesting
 .main {
-  @include flexCenter(column);
-  width: 80%;
+  @include flexCenter(row);
+  width: 80% - 20%; // You can perform operations
   margin: 0 auto;
 
-  #{&}__paragraph {
+  #{&}__paragraph1 {
     font-weight: weight(bold);
     // Hover
     &:hover {
       color: pink;
     }
+  }
+
+  #{&}__paragraph2 {
+    @extend .main__paragraph1;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
   }
 }
 

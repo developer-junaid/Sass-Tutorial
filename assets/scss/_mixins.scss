@@ -14,3 +14,9 @@
     color: darken($text-color, 100%);
   }
 }
+
+@mixin mobile() {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
